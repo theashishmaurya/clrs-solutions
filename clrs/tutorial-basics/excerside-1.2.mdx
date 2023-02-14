@@ -1,0 +1,105 @@
+---
+sidebar_position: 2
+---
+
+
+# Algorithms as a Technology 1.2
+
+In this section we will discuss about the algorithms as a technology and how it is used in the real world.
+
+
+#### 1.2-1 Give an example of an application that requires algorithmic content at the application level, and discuss the function of the algorithms involved.
+
+##### Answer:
+
+An example of an application that requires algorithmic content at the application level is a search engine. The search engine uses algorithms to rank the search results based on the relevance of the search query. The search engine also uses algorithms to determine the relevance of the search results based on the search query. The search engine also uses algorithms to determine the relevance of the search results based on the search query.
+
+Famous algorithms used in search engines are PageRank, HITS, and TF-IDF.
+
+#### 1.2-2 Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size n, insertion sort runs in 8n2 steps, while merge sort runs in 64n lg n steps. For which values of n does insertion sort beat merge sort?
+
+
+##### Answer:
+
+Let's solve this problem using maths and Log.
+
+we can write above question mathematically as:
+
+$$ 
+8n^2 < 64n \log_2 n
+
+$$
+
+
+let's divide both sides by 8n
+
+$$
+n > 8 \log_2 n
+$$
+
+$$
+n > 2^3 \log_2 n
+$$
+
+let's write the above equation in such a way we can solve without using complex maths.
+
+$$
+
+n - 8\log_2 n =  0  \\ 
+
+
+$$
+
+```javascript 
+let n =1;
+
+while (n - 8 * Math.log2(n) > 0) {
+  n++;
+}
+
+return n;
+```
+
+The above code will give you the answer to the above question.
+
+```javascript
+let n =3; // as we already know that n = 2 is the answer
+
+// we can also use while loop to find the answer to the above question
+
+while (n - 8 * Math.log2(n) > 0) {
+  n++;
+}
+
+```
+
+export const Calculate = ()=>{
+const [ans , setAns] = React.useState(" ")
+const cal = () => {
+  let anss= []
+  let n = 1;
+  while (n - 8 * Math.log2(n) >= 0) {
+    n++;
+  }
+  anss.push(n)
+  n = 3;
+  while (n <  8 * Math.log2(n)) {
+    n++;
+  }
+  console.log(n , "Uper bound")
+  anss.push(n)
+  setAns(` ${anss[0]} to ${anss[1]} `)
+}
+  return (
+    <div>
+      <button onClick={cal}>The Value of n:{ans}  </button>
+    </div>)
+}
+
+<Calculate/>
+
+
+The above code will give you the answer to the above question.
+
+
+
